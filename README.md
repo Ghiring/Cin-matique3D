@@ -87,7 +87,13 @@ if choice == 1
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/mydialog3.jpg" height="300" width="400" >
 
+.
+.
+. 
 
+De même pour les 11 autres marqueurs si choisis de manière singulière. 
+
+***
 
 
 
