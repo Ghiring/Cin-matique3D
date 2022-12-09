@@ -148,7 +148,29 @@ else
     end
 ```
 
-<img src="" height="500" width="500" >
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/LDPI.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/LFAL.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/LFAX.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/LFCC.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/LFLE.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/LFTC.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/RDPI.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/RFAL.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/RFAX.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/RFCC.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/RFLE.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/RFTC.jpg" height="500" width="500" >
 
 
 
