@@ -20,7 +20,7 @@ Le programme suivant vise à analyser les différents paramètres cinématiques 
 
 Import des données. 
 
-```html
+```mat
 clear; 
 clc;
 
