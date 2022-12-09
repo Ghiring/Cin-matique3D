@@ -61,4 +61,4 @@ options = ["LDPI" "LFAL" "LFAX" "LFCC" "LFLE" "LFTC" "RDPI" "RFAL" "RFAX" "RFCC"
 choice = menu(message,options);
 ```
 
-<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/menu.jpg" height="1000" width="400" >
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/menu.jpg" height="850" width="400" >
