@@ -196,8 +196,71 @@ subplot(2,1,2)
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20X.jpg" height="500" width="500" >
 
+```html 
+f = figure;
+   
+subplot(2,1,1)
+    plot(Data(:,2),GraphGlob(:,2),Data(:,2),GraphGlob(:,5),Data(:,2),GraphGlob(:,8),Data(:,2),GraphGlob(:,11),Data(:,2),GraphGlob(:,14),...
+    Data(:,2),GraphGlob(:,17))
+    title("Déplacements en Y pour G")  
+    ylabel("Déplacement (m)")
+    xlabel("Temps (s)")
+    legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC')
+subplot(2,1,2)
+    plot(Data(:,2),GraphGlob(:,20),Data(:,2),GraphGlob(:,23),Data(:,2),GraphGlob(:,26),Data(:,2),GraphGlob(:,29),Data(:,2),GraphGlob(:,32),...
+    Data(:,2),GraphGlob(:,35))
+    title("Déplacements en Y pour D")
+    ylabel("Déplacement (m)")
+    xlabel("Temps (s)")
+    legend('RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
+```
+    
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Y.jpg" height="500" width="500" >
 
+```html 
+f = figure;
+
+subplot(2,1,1)
+    plot(Data(:,2),GraphGlob(:,3),Data(:,2),GraphGlob(:,6),Data(:,2),GraphGlob(:,9),Data(:,2),GraphGlob(:,12),Data(:,2),GraphGlob(:,15),...
+    Data(:,2),GraphGlob(:,18))
+    title("Déplacements en Z pour G")
+    ylabel("Déplacement (m)")
+    xlabel("Temps (s)")
+    legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC')
+subplot(2,1,2)
+    plot(Data(:,2),GraphGlob(:,21),Data(:,2),GraphGlob(:,24),Data(:,2),GraphGlob(:,27),Data(:,2),GraphGlob(:,30),Data(:,2),GraphGlob(:,33),...
+    Data(:,2),GraphGlob(:,36))
+    title("Déplacements en Z pour D")    
+    ylabel("Déplacement (m)")
+    xlabel("Temps (s)")
+    legend('RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
+``` 
+
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Z.jpg" height="500" width="500" >
+
+Calcul des corrélations croisées pour permettre d'évaluer la symétrie du mouvement.
+
+```html 
+f = figure;
+
+XD = [GraphGlob(:,1) GraphGlob(:,4) GraphGlob(:,7) GraphGlob(:,10) GraphGlob(:,13) GraphGlob(:,16)];
+XG = [GraphGlob(:,19) GraphGlob(:,22) GraphGlob(:,25) GraphGlob(:,28) GraphGlob(:,31) GraphGlob(:,34)];
+
+CorrCroisX = xcorr2(XD,XG);
+plot(CorrCroisX)
+    title("CorrPlot en X")
+    legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC','RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
+```
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Corr.X.jpg" height="500" width="500" >
+
+
+
+<img src="" height="500" width="500" >
+
+
+
+<img src="" height="500" width="500" >
+
 
 
