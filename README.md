@@ -83,7 +83,7 @@ if choice == 1
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/LDPI/Interpolation_LDPI.jpg" height="500" width="500" >
 
-<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/LDPI/Modélisation_LDPI.jpg" height="500" width="500" >
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/LDPI/Modelisation_LDPI.jpg" height="500" width="500" >
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/mydialog3.jpg" height="300" width="400" >
 
