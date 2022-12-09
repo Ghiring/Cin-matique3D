@@ -359,7 +359,7 @@ plot(Data(:,2),Angles_totaux_CJ_D,Data(:,2),Angles_totaux_CJ_G)
 end
 ```
 
-<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Angle%20du%20genou:temps.jpg" height="850" width="500" >
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Angle%20du%20genou:temps.jpg" height="500" width="500" >
 
 ***
 
