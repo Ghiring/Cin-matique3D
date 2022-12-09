@@ -9,6 +9,12 @@ Le programme suivant vise à analyser les différents paramètres cinématiques 
 ***
 
 ## Table des matières :
-1. CoreScript
+1. Script principal
 2. Fonctions annexes
+
+***
+
+***
+
+***
 
