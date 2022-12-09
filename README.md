@@ -16,15 +16,15 @@ Le programme suivant vise à analyser les différents paramètres cinématiques 
 
 ***
 
-clear; 
-clc;
+$clear; 
+$clc;
 
-mydialog
-pause(3.5)
+$mydialog
+$pause(3.5)
 
-File = uigetfile(".csv","MultiSelect","off"); 
-Data = readmatrix(File);
-Data = Data(6:end,:);
+$File = uigetfile(".csv","MultiSelect","off"); 
+$Data = readmatrix(File);
+$Data = Data(6:end,:);
 
 mydialog2
 
