@@ -361,4 +361,109 @@ end
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Angle%20du%20genou:temps.jpg" height="850" width="500" >
 
+***
+
+### II - Fonctions annexes : 
+
+#### a) - mydialog 
+
+La fonction permet de faire apparaître une boite de dialogue permettant d'informer l'utilisateur de ce qu'il devra faire : ici sélectionner le fichier qu'il veut ouvrir dans 5 secondes (activation de uigetfile retardée par un timesleep).
+
+```html
+function mydialog
+    d = dialog('Position',[450 400 250 150],'Name','INFORMATION');
+
+    txt = uicontrol('Parent',d,...
+               'Style','text',...
+               'Position',[20 80 210 40],...
+               'String','Vous allez devoir choisir le fichier que vous voulez analyser dans 5 secondes.');
+
+    btn = uicontrol('Parent',d,...
+               'Position',[85 20 70 25],...
+               'String','OK',...
+               'Callback','delete(gcf)');
+end
+```
+
+***
+
+#### b) - mydialog2
+
+Informe le sujet au moyen d'une boite de dialogue que s'il désire obtenir les information sur l'ensemble des marqueurs il devra sélectionner "TOUS" dans le menu suivant. S'il ne le fait pas, il n'obtiendra que les information spécifiques au marqueur sélectionné.
+
+```html
+function mydialog2
+    d = dialog('Position',[450 400 250 150],'Name','INFORMATION');
+
+    txt = uicontrol('Parent',d,...
+               'Style','text',...
+               'Position',[20 80 210 40],...
+               'String','Si vous voulez des informations sur les angles et la symétrie, veuillez choisir "TOUS" dans la boîte de dialogue ci-contre.');
+
+    btn = uicontrol('Parent',d,...
+               'Position',[85 20 70 25],...
+               'String','OK',...
+               'Callback','delete(gcf)');
+end
+```
+
+#### c) - interlis : 
+
+La fonction est utilisée pour interpoler les valeurs manquantes et lisser la courpe de déplacement du marqueur désiré.
+
+```html
+function interlis(M,Data)
+
+    bdt = (Data(1,2)):(Data(2,2)):Data(end,2);
+    Alpha = ['X' 'Y' 'Z'];
+    
+    i=2;
+    j=1;
+
+    while i <=4
+        Maki = makima(Data(:,2),M(:,i),bdt);
+        Lis = sgolayfilt(Maki,3,99);
+        subplot(2,2,j)
+            plot(Data(:,2),Lis)
+            title(Alpha(:,j))
+    
+        i=i+1;
+        j=j+1;
+    end
+
+
+end
+
+
+#### d) - TDR_Mq
+
+La fonction TDR_Mq est utilisée pour calculer le taux de reconstruction du marqueur sélectionné. Le résultat est donné en pourcentage. 
+
+               
+```html
+function TDR_Mq(M,nom)
+
+    M(isnan(M))=0;                                  % Taux de reconstruction
+    Nb_0 = length(find(M(:,2:end)==0));
+    Nb_elem = 3*height(M);
+    TDR = 100-((Nb_0/(Nb_elem))*100);
+    
+    X = ['Le taux de reconstruction du marqueur ', nom, ' est de ', num2str(TDR), ' %'];
+    disp(X)
+
+    M_X = subplot(2,2, [3,4]);                          % Déplacements selon les 2 axes
+        plot(M(:,1),M(:,2))
+        title("Déplacement du marqueur selon l'axe X")
+        xlabel("Temps (s)")
+        ylabel("Position (m)")
+    M_Y = subplot(2,2,1);
+        plot(M(:,1),M(:,3))
+        title("Déplacement du marqueur selon l'axe Y")
+        ylabel("Position (m)")
+    M_Z = subplot(2,2,2);
+        plot(M(:,1),M(:,4))
+        title("Déplacement du marqueur selon l'axe Z")
+
+end
+```
 
