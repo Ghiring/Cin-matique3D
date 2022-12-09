@@ -4,6 +4,7 @@ Le programme suivant vise à analyser les différents paramètres cinématiques 
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/MarkerSet.png" height="500" width="500" >
 ***
+
 ## Table des matières :
 1. CoreScript
 2. Fonctions annexes
