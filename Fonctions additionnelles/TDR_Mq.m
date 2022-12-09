@@ -1,3 +1,5 @@
+% Calcul du taux de reconstruction et plot du déplacement des marqueurs
+
 function TDR_Mq(M,nom)
 
     M(isnan(M))=0;                                  % Taux de reconstruction
@@ -8,7 +10,7 @@ function TDR_Mq(M,nom)
     X = ['Le taux de reconstruction du marqueur ', nom, ' est de ', num2str(TDR), ' %'];
     disp(X)
 
-    M_X = subplot(2,2, [3,4]);                          % Déplacements selon les 2 axes
+    M_X = subplot(2,2, [3,4]);                          % Déplacements selon chaque axe
         plot(M(:,1),M(:,2))
         title("Déplacement du marqueur selon l'axe X")
         xlabel("Temps (s)")
