@@ -18,7 +18,7 @@ Le programme suivant vise à analyser les différents paramètres cinématiques 
 
 ### I - Script principal : 
 
-Import des données via. 
+Import des données. 
 
 ```html
 clear; 
@@ -62,3 +62,32 @@ choice = menu(message,options);
 ```
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/menu.jpg" height="850" width="400" >
+
+Si le marqueur LDPI est choisi, on plot les informations qui lui sont liées : déplacement du marqueur "raw", déplacement interpolé + lissé (pour combler les manques dus à des erreurs lors de l'acquisition) et déplacement du marqueur dans l'espace 3D au cours du temps. 
+
+```html
+if choice == 1 
+
+    TDR_Mq(MqLDPI, 'MqLDPI')
+    savefig('DeplacementLDPI.fig')
+    interlis(MqLDPI, Data);
+    savefig('Interpolation_LDPI')
+    clf;
+    plot3(MqLDPI(:,2),MqLDPI(:,4),MqLDPI(:,3))
+        title("Déplacement dans l'espace du marqueur LDPI")
+        savefig('Modélisation_LDPI')
+    mydialog3
+```
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/LDPI/DeplacementLDPI.fig" height="850" width="400" >
+
+<img src="" height="850" width="400" >
+
+<img src="" height="850" width="400" >
+
+<img src="" height="850" width="400" >
+
+
+
+
+
