@@ -288,7 +288,7 @@ plot(CorrCroisX)
 
 ***
 
-Définition des vecteurs cuisse (RFTC > RFLE) et jambe (RFAL > RFLX) puis calcul de l'angle entre les 2 vecteurs à chaque instant (frame) de l'acquisition puis stockage dans une matrice tierce. 
+Définition des vecteurs cuisse côté droit(RFTC > RFLE) et jambe côté droit (RFAL > RFLX) puis calcul de l'angle entre les 2 vecteurs à chaque instant (frame) de l'acquisition puis stockage dans une matrice tierce. 
 
 ```html
 u=1;
@@ -313,5 +313,52 @@ while u <= height(Data)
 end
 ```
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/MatAnglesD.jpg" height="850" width="500" >
+
+De même côté gauche. 
+
+```html
+v = 1
+Angles_totaux_CJ_G = [];
+
+while v <= height(Data)
+
+    LFTC_ist = MqLFTC(v,2:4)';
+    LFLE_ist = MqLFLE(v,2:4)';
+    LFAL_ist = MqLFAL(v,2:4)';
+    LFAX_ist = MqLFAX(v,2:4)';
+    
+    V_cuisseG = LFLE_ist-LFTC_ist;
+    V_jambeG = LFAX_ist-LFAL_ist;
+    
+    vector2angle(V_cuisseG,V_jambeG);
+    Angle_cuisse_jambeG = round(ans,1);
+    Angles_totaux_CJ_G = [Angles_totaux_CJ_G,Angle_cuisse_jambeG];
+
+    v=v+1;
+
+end
+```
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/MatAnglesG.jpg" height="850" width="500" >
+
+***
+
+Regroupement des angulations dans une matrice commune puis plot de l'évolution angulaire de châque côté en fonction du temps de façon à permettre la comparaison bilatérale. 
+
+```html
+Angles_totaux_CJ_G = Angles_totaux_CJ_G';
+Angles_totaux_CJ_D = Angles_totaux_CJ_D';
+
+f = figure;
+plot(Data(:,2),Angles_totaux_CJ_D,Data(:,2),Angles_totaux_CJ_G)
+    legend('Côté gauche','Côté droit')
+    xlabel("Temps (s)")
+    ylabel("Angle (°)")
+    title("Évolution de l'angle du genou en fonction du temps")
+
+end
+```
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Angle%20du%20genou:temps.jpg" height="850" width="500" >
 
 
