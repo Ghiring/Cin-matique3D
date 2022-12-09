@@ -95,10 +95,10 @@ De même pour les 11 autres marqueurs si choisis de manière singulière.
 
 ***
 
-
+Si un marqueur singulier n'est pas choisi, alors on plot les informations liées à tous les marqueurs. On commence ici par interpoler et plot les graphiques en X, Y et Z marqueur par marqueur.
+```html 
 else
     
-```html 
     A = [MqLDPI MqLFAL MqLFAX MqLFCC MqLFLE MqLFTC MqRDPI MqRFAL MqRFAX MqRFCC MqRFLE MqRFTC];
     B = ["MqLDPI" "MqLFAL" "MqLFAX" "MqLFCC" "MqLFLE" "MqLFTC" "MqRDPI" "MqRFAL" "MqRFAX" "MqRFCC" "MqRFLE" "MqRFTC"];
 
@@ -147,4 +147,8 @@ else
     
     end
 ```
+
+<img src="" height="500" width="500" >
+
+
 
