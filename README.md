@@ -79,7 +79,7 @@ if choice == 1
     mydialog3
 ```
 
-<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/LDPI/DeplacementLDPI.fig" height="850" width="400" >
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/LDPI/DeplacementLDPI.jpg" height="850" width="400" >
 
 <img src="" height="850" width="400" >
 
