@@ -16,6 +16,8 @@ Le programme suivant vise à analyser les différents paramètres cinématiques 
 
 ***
 
+### I - Script principal : 
+
 Import des données via. 
 
 ```html
@@ -32,6 +34,13 @@ Data = Data(6:end,:);
 mydialog2
 
 ```
-### Outputs mydialog2 : 
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/mydialog.jpg" height="300" width="400" >
+
+```html
+mydialog2
+```
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/mydialog2.jpg" height="300" width="400" >
+
+
