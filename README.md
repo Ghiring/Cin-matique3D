@@ -16,15 +16,16 @@ Le programme suivant vise à analyser les différents paramètres cinématiques 
 
 ***
 
-$clear; 
-$clc;
+```html
+clear; 
+clc;
 
-$mydialog
-$pause(3.5)
+mydialog
+pause(3.5)
 
-$File = uigetfile(".csv","MultiSelect","off"); 
-$Data = readmatrix(File);
-$Data = Data(6:end,:);
+File = uigetfile(".csv","MultiSelect","off"); 
+Data = readmatrix(File);
+Data = Data(6:end,:);
 
 mydialog2
 
@@ -40,4 +41,5 @@ MqRFAX = Data(:,[2 27:29]);
 MqRFCC = Data(:,[2 30:32]);
 MqRFLE = Data(:,[2 33:35]);
 MqRFTC = Data(:,[2 36:38]);
+```
 
