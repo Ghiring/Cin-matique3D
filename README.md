@@ -433,11 +433,11 @@ function interlis(M,Data)
 
 
 end
-
+```
 
 #### d) - TDR_Mq
 
-La fonction TDR_Mq est utilisée pour calculer le taux de reconstruction du marqueur sélectionné. Le résultat est donné en pourcentage. 
+La fonction TDR_Mq est utilisée pour calculer le taux de reconstruction du marqueur sélectionné. Le résultat est donné en pourcentage. Elle permet en plus de plot les graphiques de déplacement des marqueurs selon 3 axes pour chaque marqueur. 
 
                
 ```html
@@ -451,7 +451,7 @@ function TDR_Mq(M,nom)
     X = ['Le taux de reconstruction du marqueur ', nom, ' est de ', num2str(TDR), ' %'];
     disp(X)
 
-    M_X = subplot(2,2, [3,4]);                          % Déplacements selon les 2 axes
+    M_X = subplot(2,2, [3,4]);                          % Déplacements selon les axes
         plot(M(:,1),M(:,2))
         title("Déplacement du marqueur selon l'axe X")
         xlabel("Temps (s)")
@@ -467,3 +467,43 @@ function TDR_Mq(M,nom)
 end
 ```
 
+#### e) - mydialog3 
+
+Lorsque l'utilisateur ne choisi qu'un marqueur, les tracés des déplacements et modélisations sont directement enregistrées dans le dossier affilié à MatLab et ne sont pas plot dans les output. Le programme semble alors se temriner sans aucunes actions : cette fonction est donc là pour informer l'utilisateur que les figures ont bien été sauvegardées sur son ordinateur. 
+
+```html
+function mydialog3
+    d = dialog('Position',[450 400 250 150],'Name','INFORMATION');
+
+    txt = uicontrol('Parent',d,...
+               'Style','text',...
+               'Position',[20 80 210 40],...
+               'String','Les graphiques ont bien été sauvegardés dans votre dossier de référence MATLAB.');
+
+    btn = uicontrol('Parent',d,...
+               'Position',[85 20 70 25],...
+               'String','OK',...
+               'Callback','delete(gcf)');
+end
+```
+
+#### f) - vector2angle
+
+Comme son nom l'indique, cette fonction nous a permis à partir de la définition de 2 vecteurs (ici cuisse et jambe) de calculer directement l'angle entre ceux-cis. 
+
+```html
+function angle_in_degrees = vector2angle(u,v)
+  
+  a= sqrt(u(1)^2+u(2)^2+u(3)^2);
+  b=sqrt(v(1)^2+v(2)^2+v(3)^2);
+  c=0;
+  
+  for i=1:1:numel(u)
+      c=c+u(i)*v(i);
+  
+  end
+  
+  angle_in_degrees=acos(c/(a*b))*180/pi
+  
+end
+```
