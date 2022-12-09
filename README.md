@@ -365,7 +365,7 @@ end
 
 ### II - Fonctions annexes : 
 
-#### a) - mydialog 
+####    a) - mydialog 
 
 La fonction permet de faire apparaître une boite de dialogue permettant d'informer l'utilisateur de ce qu'il devra faire : ici sélectionner le fichier qu'il veut ouvrir dans 5 secondes (activation de uigetfile retardée par un timesleep).
 
@@ -387,7 +387,7 @@ end
 
 ***
 
-#### b) - mydialog2
+####    b) - mydialog2
 
 Informe le sujet au moyen d'une boite de dialogue que s'il désire obtenir les information sur l'ensemble des marqueurs il devra sélectionner "TOUS" dans le menu suivant. S'il ne le fait pas, il n'obtiendra que les information spécifiques au marqueur sélectionné.
 
@@ -407,7 +407,7 @@ function mydialog2
 end
 ```
 
-#### c) - interlis : 
+####    c) - interlis : 
 
 La fonction est utilisée pour interpoler les valeurs manquantes et lisser la courpe de déplacement du marqueur désiré.
 
@@ -435,7 +435,7 @@ function interlis(M,Data)
 end
 ```
 
-#### d) - TDR_Mq
+####    d) - TDR_Mq
 
 La fonction TDR_Mq est utilisée pour calculer le taux de reconstruction du marqueur sélectionné. Le résultat est donné en pourcentage. Elle permet en plus de plot les graphiques de déplacement des marqueurs selon 3 axes pour chaque marqueur. 
 
@@ -467,7 +467,7 @@ function TDR_Mq(M,nom)
 end
 ```
 
-#### e) - mydialog3 
+####    e) - mydialog3 
 
 Lorsque l'utilisateur ne choisi qu'un marqueur, les tracés des déplacements et modélisations sont directement enregistrées dans le dossier affilié à MatLab et ne sont pas plot dans les output. Le programme semble alors se temriner sans aucunes actions : cette fonction est donc là pour informer l'utilisateur que les figures ont bien été sauvegardées sur son ordinateur. 
 
@@ -487,7 +487,7 @@ function mydialog3
 end
 ```
 
-#### f) - vector2angle
+####    f) - vector2angle
 
 Comme son nom l'indique, cette fonction nous a permis à partir de la définition de 2 vecteurs (ici cuisse et jambe) de calculer directement l'angle entre ceux-cis. 
 
