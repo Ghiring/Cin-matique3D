@@ -96,6 +96,7 @@ De même pour les 11 autres marqueurs si choisis de manière singulière.
 ***
 
 Si un marqueur unique n'est pas choisi, alors on plot les informations liées à tous les marqueurs. On commence ici par interpoler et plot les graphiques en X, Y et Z marqueur par marqueur.
+
 ```html 
 else
     
@@ -172,5 +173,25 @@ else
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/RFTC.jpg" height="500" width="500" >
 
+On regroupe toutes les données de chaque marqueur puis on les plot : un graphique pour le déplacement des marqueurs du côté droit en X et un graphique pour le déplacement des marqueurs du côté gauche en X de façon à pouvoir comparer bilatéralement.
 
+```html 
+GraphGlob = reshape(GraphGlob(:,:),5872,[]);
 
+subplot(2,1,1)
+    plot(Data(:,2),GraphGlob(:,1),Data(:,2),GraphGlob(:,4),Data(:,2),GraphGlob(:,7),Data(:,2),GraphGlob(:,10),Data(:,2),GraphGlob(:,13),...
+    Data(:,2),GraphGlob(:,16))
+    title("Déplacements en X pour G")
+    ylabel("Déplacement (m)")
+    xlabel("Temps (s)")
+    legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC')
+subplot(2,1,2)
+    plot(Data(:,2),GraphGlob(:,19),Data(:,2),GraphGlob(:,22),Data(:,2),GraphGlob(:,25),Data(:,2),GraphGlob(:,28),Data(:,2),GraphGlob(:,31),...
+    Data(:,2),GraphGlob(:,34))
+    title("Déplacements en X pour D")
+    ylabel("Déplacement (m)")
+    xlabel("Temps (s)")
+    legend('RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
+```
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Déplacements%20en%20X.jpg" height="500" width="500" >
