@@ -1,4 +1,4 @@
-% ATTENTION : ce code nécessite absolument les fichiers contenant lesn fonctions externes pour fonctionner.
+% ATTENTION : ce programme nécessite absolument les fichiers contenant les fonctions externes associées pour fonctionner.
 
 clear; 
 clc;
