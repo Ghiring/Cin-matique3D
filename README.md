@@ -34,7 +34,7 @@ Data = Data(6:end,:);
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/mydialog.jpg" height="300" width="400" >
 
-```html
+```MATLAB
 mydialog2
 ```
 
@@ -42,7 +42,7 @@ mydialog2
 
 Indexation des données marqueur par marqueur.
 
-```html
+```MATLAB
 MqLDPI = Data(:,2:5);
 MqLFAL = Data(:,[2 6:8]);
 MqLFAX = Data(:,[2 9:11]);
@@ -65,7 +65,7 @@ choice = menu(message,options);
 
 Si le marqueur LDPI est choisi, on plot les informations qui lui sont liées : déplacement du marqueur "raw", déplacement interpolé + lissé (pour combler les manques dus à des erreurs lors de l'acquisition) et déplacement du marqueur dans l'espace 3D au cours du temps. 
 
-```html
+```MATLAB
 if choice == 1 
 
     TDR_Mq(MqLDPI, 'MqLDPI')
@@ -97,7 +97,7 @@ De même pour les 11 autres marqueurs si choisis de manière singulière.
 
 Si un marqueur unique n'est pas choisi, alors on plot les informations liées à tous les marqueurs. On commence ici par interpoler et plot les graphiques en X, Y et Z marqueur par marqueur.
 
-```html 
+```MATLAB
 else
     
     A = [MqLDPI MqLFAL MqLFAX MqLFCC MqLFLE MqLFTC MqRDPI MqRFAL MqRFAX MqRFCC MqRFLE MqRFTC];
@@ -177,7 +177,7 @@ else
 
 On regroupe toutes les données de chaque marqueur puis on les plot : un graphique pour le déplacement des marqueurs du côté droit en X et un graphique pour le déplacement des marqueurs du côté gauche en X de façon à pouvoir comparer bilatéralement.
 
-```html 
+```MATLAB 
 GraphGlob = reshape(GraphGlob(:,:),5872,[]);
 
 subplot(2,1,1)
@@ -198,7 +198,7 @@ subplot(2,1,2)
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20X.jpg" height="500" width="500" >
 
-```html 
+```MATLAB
 f = figure;
    
 subplot(2,1,1)
@@ -219,7 +219,7 @@ subplot(2,1,2)
     
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Y.jpg" height="500" width="500" >
 
-```html 
+```MATLAB 
 f = figure;
 
 subplot(2,1,1)
@@ -244,7 +244,7 @@ subplot(2,1,2)
 
 Calcul des corrélations croisées pour permettre d'évaluer la symétrie du mouvement.
 
-```html 
+```MATLAB
 f = figure;
 
 XD = [GraphGlob(:,1) GraphGlob(:,4) GraphGlob(:,7) GraphGlob(:,10) GraphGlob(:,13) GraphGlob(:,16)];
@@ -258,7 +258,7 @@ plot(CorrCroisX)
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Corr.X.jpg" height="500" width="500" >
 
-```html
+```MATLAB
 f = figure;
 
 YD = [GraphGlob(:,2) GraphGlob(:,5) GraphGlob(:,8) GraphGlob(:,11) GraphGlob(:,14) GraphGlob(:,17)];
@@ -272,7 +272,7 @@ plot(CorrCroisX)
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Y.jpg" height="500" width="500" >
 
-```html
+```MATLAB
 f = figure;
 
 ZD = [GraphGlob(:,3) GraphGlob(:,6) GraphGlob(:,9) GraphGlob(:,12) GraphGlob(:,15) GraphGlob(:,18)];
@@ -290,7 +290,7 @@ plot(CorrCroisX)
 
 Définition des vecteurs cuisse côté droit(RFTC > RFLE) et jambe côté droit (RFAL > RFLX) puis calcul de l'angle entre les 2 vecteurs à chaque instant (frame) de l'acquisition puis stockage dans une matrice tierce. 
 
-```html
+```MATLAB
 u=1;
 Angles_totaux_CJ_D = [];
 
@@ -316,7 +316,7 @@ end
 
 De même côté gauche. 
 
-```html
+```MATLAB
 v = 1
 Angles_totaux_CJ_G = [];
 
@@ -345,7 +345,7 @@ end
 
 Regroupement des angulations dans une matrice commune puis plot de l'évolution angulaire de châque côté en fonction du temps de façon à permettre la comparaison bilatérale. 
 
-```html
+```MATLAB
 Angles_totaux_CJ_G = Angles_totaux_CJ_G';
 Angles_totaux_CJ_D = Angles_totaux_CJ_D';
 
@@ -369,7 +369,7 @@ end
 
 La fonction permet de faire apparaître une boite de dialogue permettant d'informer l'utilisateur de ce qu'il devra faire : ici sélectionner le fichier qu'il veut ouvrir dans 5 secondes (activation de uigetfile retardée par un timesleep).
 
-```html
+```MATLAB
 function mydialog
     d = dialog('Position',[450 400 250 150],'Name','INFORMATION');
 
@@ -391,7 +391,7 @@ end
 
 Informe le sujet au moyen d'une boite de dialogue que s'il désire obtenir les information sur l'ensemble des marqueurs il devra sélectionner "TOUS" dans le menu suivant. S'il ne le fait pas, il n'obtiendra que les information spécifiques au marqueur sélectionné.
 
-```html
+```MATLAB
 function mydialog2
     d = dialog('Position',[450 400 250 150],'Name','INFORMATION');
 
@@ -411,7 +411,7 @@ end
 
 La fonction est utilisée pour interpoler les valeurs manquantes et lisser la courpe de déplacement du marqueur désiré.
 
-```html
+```MATLAB
 function interlis(M,Data)
 
     bdt = (Data(1,2)):(Data(2,2)):Data(end,2);
@@ -440,7 +440,7 @@ end
 La fonction TDR_Mq est utilisée pour calculer le taux de reconstruction du marqueur sélectionné. Le résultat est donné en pourcentage. Elle permet en plus de plot les graphiques de déplacement des marqueurs selon 3 axes pour chaque marqueur. 
 
                
-```html
+```MATLAB
 function TDR_Mq(M,nom)
 
     M(isnan(M))=0;                                  % Taux de reconstruction
@@ -471,7 +471,7 @@ end
 
 Lorsque l'utilisateur ne choisi qu'un marqueur, les tracés des déplacements et modélisations sont directement enregistrées dans le dossier affilié à MatLab et ne sont pas plot dans les output. Le programme semble alors se temriner sans aucunes actions : cette fonction est donc là pour informer l'utilisateur que les figures ont bien été sauvegardées sur son ordinateur. 
 
-```html
+```MATLAB
 function mydialog3
     d = dialog('Position',[450 400 250 150],'Name','INFORMATION');
 
@@ -491,7 +491,7 @@ end
 
 Comme son nom l'indique, cette fonction nous a permis à partir de la définition de 2 vecteurs (ici cuisse et jambe) de calculer directement l'angle entre ceux-cis. 
 
-```html
+```MATLAB
 function angle_in_degrees = vector2angle(u,v)
   
   a= sqrt(u(1)^2+u(2)^2+u(3)^2);
