@@ -16,6 +16,8 @@ Le programme suivant vise à analyser les différents paramètres cinématiques 
 
 ***
 
+Import des données via. 
+
 ```html
 clear; 
 clc;
@@ -29,17 +31,7 @@ Data = Data(6:end,:);
 
 mydialog2
 
-MqLDPI = Data(:,2:5);
-MqLFAL = Data(:,[2 6:8]);
-MqLFAX = Data(:,[2 9:11]);
-MqLFCC = Data(:,[2 12:14]);
-MqLFLE = Data(:,[2 15:17]);
-MqLFTC = Data(:,[2 18:20]);
-MqRDPI = Data(:,[2 21:23]);
-MqRFAL = Data(:,[2 24:26]);
-MqRFAX = Data(:,[2 27:29]);
-MqRFCC = Data(:,[2 30:32]);
-MqRFLE = Data(:,[2 33:35]);
-MqRFTC = Data(:,[2 36:38]);
 ```
+### Outputs mydialog2 : 
+
 
