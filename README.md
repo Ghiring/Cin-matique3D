@@ -194,4 +194,10 @@ subplot(2,1,2)
     legend('RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
 ```
 
-<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Déplacements%20en%20X.jpg" height="500" width="500" >
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20X.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Y.jpg" height="500" width="500" >
+
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Z.jpg" height="500" width="500" >
+
+
