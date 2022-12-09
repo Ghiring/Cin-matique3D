@@ -173,6 +173,8 @@ else
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/TOUS/RFTC.jpg" height="500" width="500" >
 
+***
+
 On regroupe toutes les données de chaque marqueur puis on les plot : un graphique pour le déplacement des marqueurs du côté droit en X et un graphique pour le déplacement des marqueurs du côté gauche en X de façon à pouvoir comparer bilatéralement.
 
 ```html 
@@ -238,6 +240,8 @@ subplot(2,1,2)
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Z.jpg" height="500" width="500" >
 
+***
+
 Calcul des corrélations croisées pour permettre d'évaluer la symétrie du mouvement.
 
 ```html 
@@ -254,19 +258,19 @@ plot(CorrCroisX)
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Corr.X.jpg" height="500" width="500" >
 
+```html
 f = figure;
 
 YD = [GraphGlob(:,2) GraphGlob(:,5) GraphGlob(:,8) GraphGlob(:,11) GraphGlob(:,14) GraphGlob(:,17)];
 YG = [GraphGlob(:,20) GraphGlob(:,23) GraphGlob(:,26) GraphGlob(:,29) GraphGlob(:,32) GraphGlob(:,35)];
 
-```html
 CorrCroisX = xcorr2(YD,YG);
 plot(CorrCroisX)
     title("CorrPlot en Y")
     legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC','RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
 ```
 
-<img src="" height="500" width="500" >
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Y.jpg" height="500" width="500" >
 
 ```html
 f = figure;
@@ -280,7 +284,34 @@ plot(CorrCroisX)
     legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC','RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
 ```
 
-<img src="" height="500" width="500" >
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Z.jpg" height="500" width="500" >
 
+***
+
+Définition des vecteurs cuisse (RFTC > RFLE) et jambe (RFAL > RFLX) puis calcul de l'angle entre les 2 vecteurs à chaque instant (frame) de l'acquisition puis stockage dans une matrice tierce. 
+
+```html
+u=1;
+Angles_totaux_CJ_D = [];
+
+while u <= height(Data)
+
+    RFTC_ist = MqRFTC(u,2:4)';
+    RFLE_ist = MqRFLE(u,2:4)';
+    RFAL_ist = MqRFAL(u,2:4)';
+    RFAX_ist = MqRFAX(u,2:4)';
+    
+    V_cuisseD = RFLE_ist-RFTC_ist;
+    V_jambeD = RFAX_ist-RFAL_ist;
+
+    vector2angle(V_cuisseD,V_jambeD);
+    Angle_cuisse_jambeD = round(ans,1);
+    Angles_totaux_CJ_D = [Angles_totaux_CJ_D,Angle_cuisse_jambeD];
+
+    u=u+1;
+
+end
+```
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/MatAnglesD.jpg" height="850" width="500" >
 
 
