@@ -96,4 +96,55 @@ De même pour les 11 autres marqueurs si choisis de manière singulière.
 ***
 
 
+else
+    
+```html 
+    A = [MqLDPI MqLFAL MqLFAX MqLFCC MqLFLE MqLFTC MqRDPI MqRFAL MqRFAX MqRFCC MqRFLE MqRFTC];
+    B = ["MqLDPI" "MqLFAL" "MqLFAX" "MqLFCC" "MqLFLE" "MqLFTC" "MqRDPI" "MqRFAL" "MqRFAX" "MqRFCC" "MqRFLE" "MqRFTC"];
+
+    a=2;
+    b=3;
+    c=4;
+    l=1;
+
+    warning('off')
+    rmpath('folderthatisnotonpath')
+    
+    GraphGlob = [];
+
+    while b <= 48 
+    
+        C = A(:,a:c);
+    
+        a=a+4;
+        b=b+4;
+        c=c+4;
+    
+    
+    bdt = (Data(1,2)):(Data(2,2)):Data(end,2);
+        Alpha = ['X' 'Y' 'Z'];
+        
+        i=1;
+        j=1;
+    
+        while i <=3
+            Maki = makima(Data(:,2),C(:,i),bdt);
+            Lis = sgolayfilt(Maki,3,99);
+            subplot(2,2,j)
+                plot(Data(:,2),Lis)
+                title(Alpha(:,j))
+            xlabel({'Temps (s)',B(:,l)})
+            ylabel('Deplacement (m)')
+            GraphGlob = [GraphGlob,Lis];
+
+            i=i+1;
+            j=j+1;
+
+        end
+    
+    l=l+1;
+    f = figure;
+    
+    end
+```
 
