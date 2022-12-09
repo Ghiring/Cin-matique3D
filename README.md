@@ -34,4 +34,4 @@ mydialog2
 ```
 ### Outputs mydialog2 : 
 
-<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/mydialog.jpg" height="300" width="300" >
+<img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Boites%20de%20dialogue/mydialog.jpg" height="300" width="400" >
