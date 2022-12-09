@@ -254,11 +254,31 @@ plot(CorrCroisX)
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Corr.X.jpg" height="500" width="500" >
 
+f = figure;
 
+YD = [GraphGlob(:,2) GraphGlob(:,5) GraphGlob(:,8) GraphGlob(:,11) GraphGlob(:,14) GraphGlob(:,17)];
+YG = [GraphGlob(:,20) GraphGlob(:,23) GraphGlob(:,26) GraphGlob(:,29) GraphGlob(:,32) GraphGlob(:,35)];
+
+```html
+CorrCroisX = xcorr2(YD,YG);
+plot(CorrCroisX)
+    title("CorrPlot en Y")
+    legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC','RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
+```
 
 <img src="" height="500" width="500" >
 
+```html
+f = figure;
 
+ZD = [GraphGlob(:,3) GraphGlob(:,6) GraphGlob(:,9) GraphGlob(:,12) GraphGlob(:,15) GraphGlob(:,18)];
+ZG = [GraphGlob(:,21) GraphGlob(:,24) GraphGlob(:,27) GraphGlob(:,30) GraphGlob(:,33) GraphGlob(:,36)];
+
+CorrCroisX = xcorr2(ZD,ZG);
+plot(CorrCroisX)
+    title("CorrPlot en Z")
+    legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC','RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
+```
 
 <img src="" height="500" width="500" >
 
