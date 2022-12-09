@@ -1,3 +1,5 @@
+% Interpolation et lissage des données brutes
+
 function interlis(M,Data)
 
     bdt = (Data(1,2)):(Data(2,2)):Data(end,2);
