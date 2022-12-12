@@ -196,6 +196,8 @@ subplot(2,1,2)
     legend('RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
 ```
 
+Selon l'axe Y.
+
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20X.jpg" height="500" width="500" >
 
 ```MATLAB
@@ -216,6 +218,8 @@ subplot(2,1,2)
     xlabel("Temps (s)")
     legend('RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
 ```
+    
+Selon l'axe Z.
     
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Y.jpg" height="500" width="500" >
 
@@ -256,6 +260,8 @@ plot(CorrCroisX)
     legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC','RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
 ```
 
+En X.
+
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Corr.X.jpg" height="500" width="500" >
 
 ```MATLAB
@@ -269,6 +275,8 @@ plot(CorrCroisX)
     title("CorrPlot en Y")
     legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC','RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
 ```
+
+En Y.
 
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Y.jpg" height="500" width="500" >
 
@@ -284,11 +292,13 @@ plot(CorrCroisX)
     legend('LDPI','LFAL','LFAX','LFCC','LFLE','LFTC','RDPI','RFAL','RFAX','RFCC','RFLE','RFTC')
 ```
 
+En Z.
+
 <img src="https://github.com/Ghiring/Cin-matique3D/blob/main/Outputs/Deplacements%20en%20Z.jpg" height="500" width="500" >
 
 ***
 
-Définition des vecteurs cuisse côté droit(RFTC > RFLE) et jambe côté droit (RFAL > RFLX) puis calcul de l'angle entre les 2 vecteurs à chaque instant (frame) de l'acquisition puis stockage dans une matrice tierce. 
+Définition des vecteurs cuisse côté droit (RFTC > RFLE) et jambe côté droit (RFAL > RFLX) puis calcul de l'angle entre les 2 vecteurs à chaque instant (frame) de l'acquisition puis stockage dans une matrice tierce. 
 
 ```MATLAB
 u=1;
@@ -343,7 +353,7 @@ end
 
 ***
 
-Regroupement des angulations dans une matrice commune puis plot de l'évolution angulaire de châque côté en fonction du temps de façon à permettre la comparaison bilatérale. 
+Regroupement des angles à chaque instant dans une matrice commune puis plot de l'évolution de l'angle cuisse-jambe de châque côté en fonction du temps de façon. Ce graph permet la comparaison bilatérale. 
 
 ```MATLAB
 Angles_totaux_CJ_G = Angles_totaux_CJ_G';
@@ -437,7 +447,7 @@ end
 
 ####    d) - TDR_Mq
 
-La fonction TDR_Mq est utilisée pour calculer le taux de reconstruction du marqueur sélectionné. Le résultat est donné en pourcentage. Elle permet en plus de plot les graphiques de déplacement des marqueurs selon 3 axes pour chaque marqueur. 
+La fonction TDR_Mq est utilisée pour calculer le taux de reconstruction du marqueur sélectionné. Le résultat est donné en pourcentage. Elle permet en plus de cela de plot les graphiques de déplacement des marqueurs selon 3 axes (pour chaque marqueur). 
 
                
 ```MATLAB
@@ -469,7 +479,7 @@ end
 
 ####    e) - mydialog3 
 
-Lorsque l'utilisateur ne choisi qu'un marqueur, les tracés des déplacements et modélisations sont directement enregistrées dans le dossier affilié à MatLab et ne sont pas plot dans les output. Le programme semble alors se temriner sans aucunes actions : cette fonction est donc là pour informer l'utilisateur que les figures ont bien été sauvegardées sur son ordinateur. 
+Lorsque l'utilisateur ne choisi qu'un marqueur, les tracés des déplacements et modélisations sont directement enregistrées dans le dossier affilié à MatLab et ne sont pas plot dans les output. Le programme semble alors se terminer brutalement : cette fonction est donc là pour informer l'utilisateur que les figures ont bien été sauvegardées sur son ordinateur. 
 
 ```MATLAB
 function mydialog3
